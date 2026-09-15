@@ -15,5 +15,6 @@ struct PulseApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: [Habit.self, Entry.self, HabitCompletion.self])
     }
 }
