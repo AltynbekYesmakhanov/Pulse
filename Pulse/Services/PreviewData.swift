@@ -23,6 +23,11 @@ struct PreviewData {
         let second = Entry(createdDate: Calendar.current.date(byAdding: .day, value: -1, to: .now) ?? Date.now, moodValue: 3, tags: ["First", "Second"])
         let third = Entry(createdDate: Calendar.current.date(byAdding: .day, value: -2, to: .now) ?? Date.now, moodValue: 5, note: "It's the third")
         
+        let grapplingToday = HabitCompletion(date: Date.now, habit: grappling)
+        let grapplingYesterday = HabitCompletion(date: Calendar.current.date(byAdding: .day, value: -1, to: .now) ?? Date.now, habit: grappling)
+        let grapplingTwoDaysAgo = HabitCompletion(date: Calendar.current.date(byAdding: .day, value: -2, to: .now) ?? Date.now, habit: grappling)
+        let cyclingTwoDaysAgo = HabitCompletion(date: Calendar.current.date(byAdding: .day, value: -2, to: .now) ?? Date.now, habit: cycling)
+        
         
         
         container.mainContext.insert(grappling)
@@ -31,6 +36,11 @@ struct PreviewData {
         container.mainContext.insert(first)
         container.mainContext.insert(second)
         container.mainContext.insert(third)
+        container.mainContext.insert(grapplingToday)
+        container.mainContext.insert(grapplingYesterday)
+        container.mainContext.insert(grapplingTwoDaysAgo)
+        container.mainContext.insert(cyclingTwoDaysAgo)
+        
         
         return container
     }

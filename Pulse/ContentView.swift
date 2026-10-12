@@ -6,13 +6,20 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+    @Query var habits: [Habit]
+
     var body: some View {
-        Text("Pulse")
+        List(habits) { habit in
+            Text(habit.name)
+        }
+
     }
 }
 
 #Preview {
     ContentView()
+        .modelContainer(PreviewData.container)
 }
