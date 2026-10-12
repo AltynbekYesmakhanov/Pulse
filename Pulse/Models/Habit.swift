@@ -1,5 +1,5 @@
 //
-//  Untitled.swift
+//  Habit.swift
 //  Pulse
 //
 //  Created by Алтынбек Есмаханов on 13.09.2026.
