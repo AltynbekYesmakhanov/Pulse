@@ -6,14 +6,23 @@
 //
 
 import SwiftUI
-import SwiftData
+//import SwiftData
 
 struct ContentView: View {
-    @Query var habits: [Habit]
-
     var body: some View {
-        List(habits) { habit in
-            Text(habit.name)
+        TabView {
+            Tab("Today", systemImage: "calendar.circle"){
+                TodayView()
+            }
+            Tab("Journal", systemImage: "book"){
+                JournalView()
+            }
+            Tab("Stats", systemImage: "chart.bar.xaxis"){
+                StatsView()
+            }
+            Tab("Settings", systemImage: "gearshape"){
+                SettingsView()
+            }
         }
 
     }
@@ -21,5 +30,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(PreviewData.container)
+//        .modelContainer(PreviewData.container)
 }
