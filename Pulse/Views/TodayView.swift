@@ -9,8 +9,15 @@ import Foundation
 import SwiftUI
 
 struct TodayView: View {
+    @State private var selectedMood: Int? = nil
+    
     var body: some View{
-        Text("Today View")
+        VStack{
+            MoodPickerView(selectedMood: $selectedMood)
+            Text("Current value is: \(selectedMood ?? 0 )")
+        }
+        
+        
     }
 }
 
